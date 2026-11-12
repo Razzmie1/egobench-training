@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "scene-0001",
+  "frames": [
+    "./frame1.png"
+  ],
+  "frame_rate_hz": 1.0,
+  "state": {
+    "pose": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "twist": [
+      0.6,
+      0.0
+    ],
+    "stamp_s": 0.0,
+    "frame": "map"
+  },
+  "pedestrians": [
+    {
+      "id": null,
+      "x": 2.2,
+      "y": -0.7,
+      "vx": -0.1,
+      "vy": 0.4,
+      "radius": 0.3
+    }
+  ],
+  "labels": {
+    "closeness": "2.4",
+    "speed": "4.4",
+    "approach": "2.9",
+    "surprise": "1.1"
+  },
+  "meta": {
+    "generator": "mppi2d",
+    "seed": 0
+  }
+}

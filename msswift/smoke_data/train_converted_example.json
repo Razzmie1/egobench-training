@@ -1,0 +1,16 @@
+{
+    "messages": [
+        {
+            "role": "user",
+            "content": "Rate the robots impression the pedestrians present in the camera frames using the robot state. The frames are ordered chronologically. Return only a JSON object with the keys closeness, speed, approach, surprise, each rated from 1.0 to 5.0 in increments of 0.1.\n\nCamera frames:\n<image>\n<image>\n\nRobot state (JSON): {\"pose\": [0.0, 0.0, 0.0], \"twist\": [0.6, 0.0], \"stamp_s\": 0.0, \"frame\": \"map\"}\nTracked pedestrians (JSON): [{\"id\": null, \"x\": 2.2, \"y\": -0.7, \"vx\": -0.1, \"vy\": 0.4, \"radius\": 0.3}]"
+        },
+        {
+            "role": "assistant",
+            "content": "{\"closeness\": 4.9, \"speed\": 2.2, \"approach\": 1.3, \"surprise\": 1.0}"
+        }
+    ],
+    "images": [
+        "msswift/smoke_data/train_converted_assets/sample_000000/frame1.png",
+        "msswift/smoke_data/train_converted_assets/sample_000000/frame2.png"
+    ]
+}
