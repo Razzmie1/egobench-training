@@ -1,0 +1,12 @@
+{
+  "id": "scene-0001",
+  "frames": ["frame.png"],
+  "frame_rate_hz": 1.0,
+  "state": {"pose": [0.0, 0.0, 0.0], "twist": [0.6, 0.0], "frame": "map"},
+  "goal": [4.2, 0.3],
+  "obstacles": [{"x": 2.4, "y": 1.6, "radius": 0.35}],
+  "pedestrians": [{"x": 2.2, "y": -0.7, "vx": -0.1, "vy": 0.4, "radius": 0.3}],
+  "reference": [[0.0, 0.0], [2.0, 0.15], [4.2, 0.3]],
+  "camera": {"preset": "temi"},
+  "config": {"candidates": 6, "samples": 256, "horizon": 60, "v_nominal": 0.6}
+}

@@ -1,0 +1,12 @@
+[project]
+name = "egobench-training"
+version = "0.1.0"
+description = "Training harness for the EgoBench dataset"
+requires-python = ">=3.11"
+dependencies = [
+    "ms-swift>=4.6.0",
+    "qwen-vl-utils>=0.0.14",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
+    "transformers>=4.57",
+]
