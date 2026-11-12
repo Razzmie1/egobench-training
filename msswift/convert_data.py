@@ -107,19 +107,21 @@ def _record(
         raise ValueError(f"{sample_path}: labels are missing {', '.join(missing)}")
     ratings = {key: _rating(labels[key], key, sample_path) for key in LABEL_KEYS}
 
-    image_tokens = "\n".join("<image>" for _ in source_image_paths)
+    image_tokens = "".join("<image>" for _ in source_image_paths)
     label_keys = ", ".join(LABEL_KEYS)
     prompt = (
-        "Rate the robots impression the pedestrians present in the camera frames using the robot state. "
-        "The frames are ordered chronologically. Return only a JSON object with the "
-        f"keys {label_keys}, each rated from 1.0 to 5.0 "
-        "in increments of 0.1.\n\n"
-        f"Camera frames:\n{image_tokens}\n\n"
-        f"Robot state (JSON): {json.dumps(state, ensure_ascii=False)}"
+        f"{image_tokens}The camera frames are ordered chronologically and represent the scene from the robot's perspective.\n\n"
+        f"Robot state (JSON): {json.dumps(state, ensure_ascii=False)}\n\n"
     )
     pedestrians = sample.get("pedestrians")
     if pedestrians:
-        prompt += f"\nTracked pedestrians (JSON): {json.dumps(pedestrians, ensure_ascii=False)}"
+        prompt += f"Tracked pedestrians (JSON): {json.dumps(pedestrians, ensure_ascii=False)}\n\n"
+
+    prompt += (
+        "Using the camera frames and the robot state, rate the robot's impression on the pedestrians. "
+        f"Return only a JSON object with the keys {label_keys}, "
+        f"each rated from 1.0 to 5.0 in increments of 0.1."
+    )
 
     sample_asset_dir = asset_root / f"sample_{sample_number:06d}"
     sample_asset_dir.mkdir(parents=True, exist_ok=True)

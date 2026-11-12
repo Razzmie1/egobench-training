@@ -2,7 +2,7 @@
     "messages": [
         {
             "role": "user",
-            "content": "Rate the robots impression the pedestrians present in the camera frames using the robot state. The frames are ordered chronologically. Return only a JSON object with the keys closeness, speed, approach, surprise, each rated from 1.0 to 5.0 in increments of 0.1.\n\nCamera frames:\n<image>\n<image>\n\nRobot state (JSON): {\"pose\": [0.0, 0.0, 0.0], \"twist\": [0.6, 0.0], \"stamp_s\": 0.0, \"frame\": \"map\"}\nTracked pedestrians (JSON): [{\"id\": null, \"x\": 2.2, \"y\": -0.7, \"vx\": -0.1, \"vy\": 0.4, \"radius\": 0.3}]"
+            "content": "<image><image>The camera frames are ordered chronologically and represent the scene from the robot's perspective.\n\nRobot state (JSON): {\"pose\": [0.0, 0.0, 0.0], \"twist\": [0.6, 0.0], \"stamp_s\": 0.0, \"frame\": \"map\"}\n\nTracked pedestrians (JSON): [{\"id\": null, \"x\": 2.2, \"y\": -0.7, \"vx\": -0.1, \"vy\": 0.4, \"radius\": 0.3}]\n\nUsing the camera frames and the robot state, rate the robot's impression on the pedestrians. Return only a JSON object with the keys closeness, speed, approach, surprise, each rated from 1.0 to 5.0 in increments of 0.1."
         },
         {
             "role": "assistant",
